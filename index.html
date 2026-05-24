@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Notice & Exam Portal</title>
     <style>
-        /* Modern styling preset */
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             background-color: #f4f6f9;
@@ -13,7 +12,6 @@
             padding: 0;
             color: #333;
         }
-        /* Top Banner Accent */
         .header-banner {
             background: linear-gradient(135deg, #1e3a8a, #3b82f6);
             color: white;
@@ -32,13 +30,11 @@
             opacity: 0.9;
             font-size: 1.1rem;
         }
-        /* Main Content Container */
         .container {
             max-width: 1000px;
             margin: 30px auto;
             padding: 0 20px;
         }
-        /* Dashboard Card Layout */
         .card {
             background: #ffffff;
             border-radius: 16px;
@@ -57,15 +53,6 @@
             border-bottom: 2px solid #f0f2f5;
             padding-bottom: 12px;
         }
-        /* Loading fallback message styles */
-        .widget-placeholder {
-            background: #f8fafc;
-            border: 2px dashed #cbd5e1;
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            color: #64748b;
-        }
         iframe {
             border: none;
             border-radius: 12px;
@@ -75,24 +62,27 @@
     </style>
 </head>
 <body>
-    <!-- Top Banner Section -->
+
     <div class="header-banner">
         <h1>University Notice & Exam Portal</h1>
         <p>Your central hub for schedules, announcements, and syllabi updates</p>
     </div>
+
     <div class="container">
+
         <!-- Section 1: Notice Board -->
         <div class="card">
             <h2>📢 Live Notice Board</h2>
-            <!-- STEP 3-A: Replace the line below with your Google Doc Embed Link -->
-           <iframe src="https://docs.google.com/document/d/1PcBMIOo80Si0-95IJ8vQXksl5szmupNfh4TeVUiO8ko/pub?embedded=true" height="250"></iframe>
+            <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BCvp10RFNkj3Xh5YE0mhgAulqtnhHi_yFewP9r6uE8kS8wktWRDZFpqmdf/pub?embedded=true" height="250"></iframe>
         </div>
+
         <!-- Section 2: Calendar -->
         <div class="card">
             <h2>📅 Exam Schedule & Deadlines</h2>
-            <!-- STEP 3-B: Replace the line below with your Google Calendar Embed Link -->
             <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=UTC" height="600"></iframe>
         </div>
+
     </div>
+
 </body>
 </html>
