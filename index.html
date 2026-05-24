@@ -3,132 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Notice & Exam Portal</title>
+    <title>AIS 8 Notice Board & Schedule</title>
+    
+    <!-- Importing Premium Corporate Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* Modern Layout Setup */
+        :root {
+            --primary-color: #0f172a; /* Deep corporate navy */
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6; /* Professional blue */
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: #f8fafc; /* Softer background gray */
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            color: #1e293b;
+            color: var(--text-main);
         }
 
-        /* Upgraded Luxury Header Banner */
+        /* Professional Corporate Header */
         .header-banner {
-            background: linear-gradient(135deg, #1e3a8a, #0f172a); /* Darker, richer navy gradient */
+            background-color: var(--primary-color);
+            background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 50px 20px;
+            padding: 70px 20px 90px 20px; /* Extra bottom padding for overlap effect */
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 4px solid var(--accent-color);
         }
 
-        /* Adds a subtle geometric design accent behind the text */
-        .header-banner::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 140%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 60%);
-            pointer-events: none;
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 1.5px;
+            color: #93c5fd;
+            text-transform: uppercase;
         }
 
         .header-banner h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .header-banner p {
-            margin: 12px 0 0 0;
-            opacity: 0.85;
+            margin: 16px 0 0 0;
+            color: #cbd5e1;
             font-size: 1.15rem;
             font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
-        /* Two-Column Grid Container */
+        /* Container & Grid Setup */
         .container {
-            max-width: 1200px;
-            margin: 40px auto;
+            max-width: 1250px;
+            margin: -50px auto 40px auto; /* Negative top margin pulls cards over the header */
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
+            position: relative;
+            z-index: 10;
         }
 
-        /* Premium Floating Card Design */
+        /* Sleek Dashboard Cards */
         .card {
-            background: #ffffff;
-            border-radius: 20px; /* Smoother rounded corners */
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* Premium soft shadow */
-            padding: 30px;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: transform 0.2s ease;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
         }
 
-        /* Hover animation to make it feel alive */
-        .card:hover {
-            transform: translateY(-2px);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #1e3a8a;
-            font-size: 1.6rem;
-            font-weight: 700;
+        /* Defined Header inside the Card */
+        .card-header {
+            background: #f8fafc;
+            padding: 20px 25px;
+            border-bottom: 1px solid #e2e8f0;
             display: flex;
             align-items: center;
-            gap: 12px;
-            border-bottom: 2px solid #f1f5f9;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
         }
 
-        /* Premium integration for Google Frames */
+        .card-header h2 {
+            margin: 0;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        /* Google Widgets */
         iframe {
             border: none;
-            border-radius: 12px;
             width: 100%;
-            background: #ffffff;
+            border-radius: 8px;
+            background: var(--card-bg);
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        /* Responsive Desktop Layout (Side-by-side) */
-        @media (min-width: 850px) {
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 40px;
+        }
+
+        /* Responsive Desktop Layout */
+        @media (min-width: 900px) {
             .container {
-                grid-template-columns: 2fr 3fr; /* Notice Board left, Calendar right */
-                align-items: start;
+                grid-template-columns: 2fr 3fr; /* Notice board takes 40%, Calendar takes 60% */
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Professional Top Banner -->
     <div class="header-banner">
-        <h1>University Notice & Exam Portal</h1>
-        <p>Your central hub for schedules, announcements, and syllabi updates</p>
+        <div class="badge">Student Information Portal</div>
+        <h1>AIS 8 Notice Board & Schedule</h1>
+        <p>Department of Accounting & Information Systems | Bangladesh University of Professionals</p>
     </div>
 
     <div class="container">
 
         <!-- Section 1: Notice Board -->
         <div class="card">
-            <h2>📢 Live Notice Board</h2>
-            <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8WktdWRDZFpqmdF/pub?embedded=true" height="500"></iframe>
+            <div class="card-header">
+                <h2>📌 Official Notices</h2>
+            </div>
+            <div class="card-body">
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8WktdWRDZFpqmdF/pub?embedded=true" height="600"></iframe>
+            </div>
         </div>
 
         <!-- Section 2: Calendar -->
         <div class="card">
-            <h2>📅 Exam Schedule & Deadlines</h2>
-            <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0" height="600"></iframe>
+            <div class="card-header">
+                <h2>📅 Academic Calendar & Exam Dates</h2>
+            </div>
+            <div class="card-body">
+                <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0" height="600"></iframe>
+            </div>
         </div>
 
     </div>
+
+    <!-- Official Footer -->
+    <footer>
+        &copy; 2026 AIS 8 Portal. Maintained for Academic Excellence.
+    </footer>
 
 </body>
 </html>
