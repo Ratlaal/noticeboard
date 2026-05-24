@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Notice & Exam Portal</title>
+    <style>
+        /* Modern styling preset */
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Top Banner Accent */
+        .header-banner {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-banner h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-banner p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Dashboard Card Layout */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 12px;
+        }
+
+        /* Loading fallback message styles */
+        .widget-placeholder {
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            color: #64748b;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 12px;
+            width: 100%;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner Section -->
+    <div class="header-banner">
+        <h1>University Notice & Exam Portal</h1>
+        <p>Your central hub for schedules, announcements, and syllabi updates</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Section 1: Notice Board -->
+        <div class="card">
+            <h2>📢 Live Notice Board</h2>
+            <!-- STEP 3-A: Replace the line below with your Google Doc Embed Link -->
+            <iframe src="YOUR_GOOGLE_DOC_EMBED_LINK_HERE" height="250"></iframe>
+        </div>
+
+        <!-- Section 2: Calendar -->
+        <div class="card">
+            <h2>📅 Exam Schedule & Deadlines</h2>
+            <!-- STEP 3-B: Replace the line below with your Google Calendar Embed Link -->
+            <iframe src="YOUR_GOOGLE_CALENDAR_EMBED_LINK_HERE" height="600"></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>
