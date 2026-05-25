@@ -105,7 +105,6 @@
             padding: 25px;
         }
 
-        /* Responsive Wrappers for Google Frames */
         .iframe-wrapper {
             width: 100%;
             overflow: hidden;
@@ -115,7 +114,7 @@
         .doc-iframe {
             border: none;
             width: 100%;
-            height: 600px;
+            height: 480px;
             background: var(--card-bg);
         }
 
@@ -152,42 +151,40 @@
 
     <div class="container">
 
-        <!-- Section 1: Notice Board -->
-        <div style="display: flex; flex-direction: column; gap: 30px;">
-        <div class="card">
-            <div class="card-header">
-                <h2>📌 Official Notices</h2>
-            </div>
-            <div class="card-body">
-                <div class="iframe-wrapper">
-                    <iframe class="doc-iframe" src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8WktdWRDZFpqmdF/pub?embedded=true"></iframe>
-                </div>
-            </div>
-        </div>
-
-            <!-- New Left-Side Sub-Stack for Countdown & Links -->
+        <!-- LEFT SIDE COLUMN: Notices + Countdown + Quick Links -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
-            <!-- 1. Countdown Timer Card -->
+            <!-- Official Notices Card -->
             <div class="card">
-                <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
-                    <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">⏳ Finals Countdown</h2>
+                <div class="card-header">
+                    <h2>📌 Official Notices</h2>
                 </div>
-                <div class="card-body" style="padding: 25px;">
+                <div class="card-body">
+                    <div class="iframe-wrapper">
+                        <iframe class="doc-iframe" src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8wktWRDZFpqmdF/pub?embedded=true"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professional Cropped Countdown Timer Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>⏳ Finals Countdown</h2>
+                </div>
+                <div class="card-body">
                     <div style="width: 100%; height: 135px; overflow: hidden; border-radius: 8px; position: relative;">
-    <iframe src="https://www.tickcounter.com/widget/countdown/10410311" style="border: none; width: 100%; height: 180px; background: #ffffff; position: absolute; top: 0; left: 0;" scrollbar="no"></iframe>
-</div>
+                        <iframe src="https://www.tickcounter.com/widget/countdown/10410311" style="border: none; width: 100%; height: 180px; background: #ffffff; position: absolute; top: 0; left: 0;" scrollbar="no"></iframe>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. Academic Quick Links Card -->
+            <!-- Academic Quick Links Card -->
             <div class="card">
-                <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
-                    <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🔗 Academic Quick Links</h2>
+                <div class="card-header">
+                    <h2>🔗 Academic Quick Links</h2>
                 </div>
-                <div class="card-body" style="padding: 25px;">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px;">
+                <div class="card-body">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px;">
                         <a href="https://bup.edu.bd" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
                             <span style="font-size: 1.5rem; margin-bottom: 8px;">🏛️</span>
                             <span>BUP Website</span>
@@ -196,7 +193,7 @@
                             <span style="font-size: 1.5rem; margin-bottom: 8px;">💻</span>
                             <span>UCAM Portal</span>
                         </a>
-                        <a href="https://drive.google.com/drive/folders/1rwfT8UJbDiWa3Y_F2HG6KNDaIqF4_lQX" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
+                        <a href="https://drive.google.com/drive/folders/1rwfT8UJbDiWa3Y_F2HG6KNDaIQf4_lQX" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
                             <span style="font-size: 1.5rem; margin-bottom: 8px;">☁️</span>
                             <span>Open Drive</span>
                         </a>
@@ -204,10 +201,10 @@
                 </div>
             </div>
 
-        </div> <!-- Closes the Left-Side Sub-Stack -->
+        </div> <!-- End of Left Column -->
 
-    </div> <!-- Closes the main Left Column Wrapper we added in Step 1 -->
-       <!-- Section 2: Calendar & Resource Vault Column Group -->
+
+        <!-- RIGHT SIDE COLUMN: Calendar & Shared Drive Stacked -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
             <!-- Calendar Card -->
@@ -222,26 +219,25 @@
                 </div>
             </div>
 
-            <!-- Drive Resource Vault Card (Now perfectly underneath with the same layout width) -->
+            <!-- Google Drive Resource Vault Card -->
             <div class="card">
                 <div class="card-header">
-                    <h2>📁 PDFs & Course Content </h2>
+                    <h2>📁 Shared Resource Vault (PDFs & Course Content)</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UJbDiWa3Y_F2HG6KNDaIqF4_lQX#list" style="border: none; width: 100%; height: 550px; background: #ffffff;"></iframe>
+                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UJbDiWa3Y_F2HG6KNDaIQf4_lQX#list" style="border: none; width: 100%; height: 500px; background: #ffffff;"></iframe>
                     </div>
                 </div>
             </div>
 
-        </div> <!-- End of right-side column group -->
+        </div> <!-- End of Right Column -->
 
-    </div> <!-- This cleanly closes your main layout container -->
+    </div> <!-- End of Layout Container -->
 
     <footer>
         &copy; 2026 AIS 8 Portal. Maintained by RATUL SIKDER.
     </footer>
 
 </body>
-</html>
 </html>
