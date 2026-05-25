@@ -231,37 +231,13 @@
                 </div>
             </div>
 </div> </div> <div style="max-width: 1250px; margin: 30px auto; padding: 0 20px; box-sizing: border-box; width: 100%;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; width: 100%;">
-        
-        <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden;">
-            <div class="card-header" style="background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0;">
-                <h2 style="margin: 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">📁 PDFs & Course Content</h2>
-            </div>
-            <div class="card-body" style="padding: 15px;">
-                <div class="iframe-wrapper" style="width: 100%; overflow: hidden; border-radius: 8px;">
-                    <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="border: none; width: 100%; height: 350px; background: #ffffff;"></iframe>
-                </div>
-            </div>
+    <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; width: 100%;">
+        <div class="card-header" style="background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0;">
+            <h2 style="margin: 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">📁 PDFs & Course Content</h2>
         </div>
-
-        <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; display: flex; flex-direction: column;">
-            <div class="card-header" style="background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-                <h2 style="margin: 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">🤖 Stress Buster: Tic-Tac-Toe</h2>
-                <span id="gameStatus" style="font-size: 0.8rem; font-weight: 700; color: #2563eb; background: #eff6ff; padding: 3px 8px; border-radius: 10px;">Your Turn (X)</span>
-            </div>
-            <div class="card-body" style="padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #f8fafc;">
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 200px; margin: 0 auto;">
-                    <button onclick="playMove(this, 0)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 1)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 2)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 3)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 4)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 5)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 6)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 7)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                    <button onclick="playMove(this, 8)" style="height: 60px; background: white; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1.5rem; font-weight: 800; cursor: pointer; outline: none;"></button>
-                </div>
-                <button onclick="resetGame()" style="margin-top: 15px; width: 100%; max-width: 200px; padding: 8px; background: #64748b; color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 0.85rem; cursor: pointer;">Reset Board</button>
+        <div class="card-body" style="padding: 15px;">
+            <div class="iframe-wrapper" style="width: 100%; overflow: hidden; border-radius: 8px;">
+                <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="border: none; width: 100%; height: 350px; background: #ffffff;"></iframe>
             </div>
         </div>
     </div>
@@ -333,7 +309,7 @@
             </div>
 
             <div id="bupCalcResult" style="display: none; margin-top: 25px; padding: 25px; border-radius: 12px; text-align: center; border: 1px solid transparent;">
-                <p id="bupSummaryText" style="margin: 0 0 10px 0; font-size: 1rem; color: #475569; font-weight: 500ремен;"></p>
+                <p id="bupSummaryText" style="margin: 0 0 10px 0; font-size: 1rem; color: #475569; font-weight: 500;"></p>
                 <h3 id="bupResultTitle" style="margin: 0 0 8px 0; font-size: 1.25rem;"></h3>
                 <p id="bupResultScore" style="margin: 0; font-size: 1.85rem; font-weight: 800;"></p>
             </div>
@@ -346,69 +322,6 @@
 </footer>
 
 <script>
-    // Game Logic Engine
-    var boardState = ["", "", "", "", "", "", "", "", ""];
-    var isGameLive = true;
-
-    function playMove(btn, index) {
-        if (boardState[index] !== "" || !isGameLive) return;
-        boardState[index] = "X";
-        btn.innerText = "X";
-        btn.style.color = "#2563eb";
-        
-        if (checkWin("X")) { endGame("You Won! 🎉"); return; }
-        if (boardState.indexOf("") === -1) { endGame("It's a Tie! 🤝"); return; }
-
-        isGameLive = false;
-        document.getElementById('gameStatus').innerText = "AI Thinking...";
-        
-        setTimeout(function() {
-            var aiIndex = findBestMove();
-            if (aiIndex !== -1) {
-                boardState[aiIndex] = "O";
-                var cells = btn.parentNode.getElementsByTagName('button');
-                cells[aiIndex].innerText = "O";
-                cells[aiIndex].style.color = "#ef4444";
-                
-                if (checkWin("O")) { endGame("AI Won! 🤖"); return; }
-                if (boardState.indexOf("") === -1) { endGame("It's a Tie! 🤝"); return; }
-            }
-            isGameLive = true;
-            document.getElementById('gameStatus').innerText = "Your Turn (X)";
-        }, 400);
-    }
-
-    function findBestMove() {
-        var emptyCells = [];
-        for (var i = 0; i < boardState.length; i++) { if (boardState[i] === "") emptyCells.push(i); }
-        return emptyCells.length === 0 ? -1 : emptyCells[Math.floor(Math.random() * emptyCells.length)];
-    }
-
-    function checkWin(player) {
-        var winPatterns = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
-        return winPatterns.some(function(pattern) { return pattern.every(function(idx) { return boardState[idx] === player; }); });
-    }
-
-    function endGame(message) {
-        isGameLive = false;
-        var status = document.getElementById('gameStatus');
-        status.innerText = message;
-        status.style.background = "#f1f5f9";
-        status.style.color = "#475569";
-    }
-
-    function resetGame() {
-        boardState = ["", "", "", "", "", "", "", "", ""];
-        isGameLive = true;
-        var status = document.getElementById('gameStatus');
-        status.innerText = "Your Turn (X)";
-        status.style.background = "#eff6ff";
-        status.style.color = "#2563eb";
-        var cells = status.parentNode.parentNode.getElementsByTagName('button');
-        for (var i = 0; i < 9; i++) { cells[i].innerText = ""; }
-    }
-
-    // Calculation Logic Engine
     function getScaledComponent(obtId, fullId, targetWeight) {
         var obtVal = parseFloat(document.getElementById(obtId).value);
         var fullVal = parseFloat(document.getElementById(fullId).value);
