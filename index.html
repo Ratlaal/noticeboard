@@ -217,26 +217,25 @@
                         <iframe class="calendar-iframe" style="height: 400px;" src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH"></iframe>
                     </div>
                 </div>
-           <!-- Google Drive Resource Vault Card (Under Calendar) -->
+          <!-- Google Drive Resource Vault Card (Sits under Calendar) -->
             <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; margin-top: 30px;">
                 <div class="card-header" style="background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0;">
                     <h2 style="margin: 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">📁 PDFs & Course Content</h2>
                 </div>
                 <div class="card-body" style="padding: 15px;">
                     <div class="iframe-wrapper" style="width: 100%; overflow: hidden; border-radius: 8px;">
-                        <!-- Embed link with grid view to look clean -->
                         <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="border: none; width: 100%; height: 350px; background: #ffffff;"></iframe>
                     </div>
                 </div>
             </div>
 
-        </div> <!-- Closes Right Column Sidebar Grid -->
-    </div> <!-- Closes Main 2-Column Parent Grid Container -->
+        </div> <!-- IMPORTANT: This closes the Right Column Sidebar Grid -->
+    </div> <!-- IMPORTANT: This closes the Main 2-Column Layout Container -->
 
     <!-- ======================================================= -->
     <!-- INDEPENDENT FULL-WIDTH GRADE TARGET CALCULATOR          -->
     <!-- ======================================================= -->
-    <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%;">
+    <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%; clear: both;">
         <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; width: 100%;">
             <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
                 <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🎯 Final Marks Calculator</h2>
@@ -244,6 +243,7 @@
             <div class="card-body" style="padding: 25px;">
                 <p style="margin-top: 0; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">Enter your obtained marks and the total full marks for each assessment component below. The system will automatically convert your scores and calculate what you need on your 100-mark final script.</p>
                 
+                <!-- This grid dynamically spans left-to-right into horizontal columns on screens -->
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
                     <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
                         <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 1 (Weight: 2.5)</h4>
