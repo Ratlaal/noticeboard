@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIS 8 Notice Board & Schedule</title>
     
-    <!-- Importing Premium Corporate Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -31,7 +30,7 @@
             background-color: var(--primary-color);
             background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 70px 20px 90px 20px; 
+            padding: 60px 20px 110px 20px; 
             text-align: center;
             border-bottom: 4px solid var(--accent-color);
         }
@@ -66,6 +65,14 @@
             letter-spacing: 0.5px;
         }
 
+        .countdown-container {
+            max-width: 500px;
+            margin: 25px auto 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Core Sidebar Grid Layout */
         .container {
             max-width: 1250px;
             margin: -50px auto 40px auto; 
@@ -111,18 +118,39 @@
             border-radius: 8px;
         }
 
-        .doc-iframe {
+        iframe {
             border: none;
             width: 100%;
-            height: 480px;
             background: var(--card-bg);
         }
 
-        .calendar-iframe {
-            border: none;
-            width: 100%;
-            height: 600px;
-            background: var(--card-bg);
+        .quick-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .quick-links-list li {
+            margin-bottom: 12px;
+        }
+
+        .quick-links-list a {
+            display: block;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .quick-links-list a:hover {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+            transform: translateX(4px);
         }
 
         footer {
@@ -147,88 +175,70 @@
         <div class="badge">Student Information Portal</div>
         <h1>AIS 8 Notice Board & Schedule</h1>
         <p>Department of Accounting & Information Systems | Bangladesh University of Professionals</p>
+        
+        <div class="countdown-container">
+            <iframe src="https://www.tickcounter.com/widget/countdown/123456" style="width:100%; height:80px; border:none;" scrollbar="no"></iframe>
+        </div>
     </div>
 
     <div class="container">
 
-        <!-- LEFT SIDE COLUMN: Notices + Countdown + Quick Links -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
-            <!-- Official Notices Card -->
             <div class="card">
                 <div class="card-header">
                     <h2>📌 Official Notices</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe class="doc-iframe" src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8WktdWRDZFpqmdF/pub?embedded=true"></iframe>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Professional Cropped Countdown Timer Card -->
-            <div class="card">
-                <div class="card-header">
-                    <h2>⏳ Countdown</h2>
-                </div>
-                <div class="card-body">
-                    <div style="width: 100%; height: 135px; overflow: hidden; border-radius: 8px; position: relative;">
-                        <iframe src="https://www.tickcounter.com/countdown/10410382/final-week" style="border: none; width: 100%; height: 180px; background: #ffffff; position: absolute; top: 0; left: 0;" scrollbar="no"></iframe>
+                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8wktWRDZFpqmdF/pub?embedded=true" style="height: 600px;"></iframe>
                     </div>
                 </div>
             </div>
 
-            <!-- Academic Quick Links -->
             <div class="card">
                 <div class="card-header">
                     <h2>🔗 Academic Quick Links</h2>
                 </div>
                 <div class="card-body">
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 15px;">
-                        <a href="https://bup.edu.bd" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
-                            <span style="font-size: 1.5rem; margin-bottom: 8px;">🏛️</span>
-                            <span>BUP Website</span>
-                        </a>
-                        <a href="https://ucam.bup.edu.bd" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
-                            <span style="font-size: 1.5rem; margin-bottom: 8px;">💻</span>
-                            <span>UCAM Portal</span>
-                        </a>
-                        <a href="https://library.bup.edu.bd/" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
-                            <span style="font-size: 1.5rem; margin-bottom: 8px;">📖</span>
-                            <span>Library</span>
-                        </a>
-                    </div>
+                    <ul class="quick-links-list">
+                        <li><a href="https://ucam.bup.edu.bd/" target="_blank">🌐 BUP UCAM Portal</a></li>
+                        <li><a href="https://bup.edu.bd/" target="_blank">🏫 Official BUP Website</a></li>
+                        <li><a href="#" target="_blank">📚 Course Syllabus PDF</a></li>
+                        <li><a href="#" target="_blank">⏱️ Class Routine & Schedule</a></li>
+                    </ul>
                 </div>
             </div>
 
-        </div> <!-- End of Left Column -->
+        </div>
 
-
-        <!-- RIGHT SIDE COLUMN: Calendar & Shared Drive Stacked -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
-            <!-- Calendar Card -->
             <div class="card">
                 <div class="card-header">
-                    <h2>📅 Your Next Matha Betha</h2>
+                    <h2>📅 Academic Calendar & Exam Dates</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe class="calendar-iframe" style="height: 400px;" src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH"></iframe>
-                    </div>
-                </div>
-         <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; margin-top: 30px;">
-                <div class="card-header" style="background: #f8fafc; padding: 15px 20px; border-bottom: 1px solid #e2e8f0;">
-                    <h2 style="margin: 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">📁 PDFs & Course Content</h2>
-                </div>
-                <div class="card-body" style="padding: 15px;">
-                    <div class="iframe-wrapper" style="width: 100%; overflow: hidden; border-radius: 8px;">
-                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="border: none; width: 100%; height: 350px; background: #ffffff;"></iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH" style="height: 350px;"></iframe>
                     </div>
                 </div>
             </div>
 
-        </div> </div> <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%; clear: both;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📁 PDFs & Course Content</h2>
+                </div>
+                <div class="card-body">
+                    <div class="iframe-wrapper">
+                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="height: 350px;"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div> <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%; clear: both;">
         <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; width: 100%;">
             <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
                 <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🎯 Final Marks Calculator</h2>
