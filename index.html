@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIS 8 Notice Board & Schedule</title>
     
+    <!-- Premium Workspace Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -30,7 +31,7 @@
             background-color: var(--primary-color);
             background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            padding: 60px 20px 110px 20px; 
+            padding: 60px 20px 60px 20px; 
             text-align: center;
             border-bottom: 4px solid var(--accent-color);
         }
@@ -50,7 +51,7 @@
 
         .header-banner h1 {
             margin: 0;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -58,58 +59,55 @@
         }
 
         .header-banner p {
-            margin: 16px 0 0 0;
+            margin: 12px 0 0 0;
             color: #cbd5e1;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 400;
-            letter-spacing: 0.5px;
         }
 
-        .countdown-container {
-            max-width: 500px;
-            margin: 25px auto 0 auto;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* Core Sidebar Grid Layout */
+        /* Responsive Dashboard Container Layout Grid */
         .container {
             max-width: 1250px;
-            margin: -50px auto 40px auto; 
+            margin: 40px auto; 
             padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
-            position: relative;
-            z-index: 10;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                grid-template-columns: 2fr 3fr; 
+            }
         }
 
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
             overflow: hidden;
             border: 1px solid #e2e8f0;
         }
 
         .card-header {
             background: #f8fafc;
-            padding: 20px 25px;
+            padding: 18px 22px;
             border-bottom: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
         }
 
         .card-header h2 {
             margin: 0;
             color: var(--secondary-color);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .card-body {
-            padding: 25px;
+            padding: 22px;
         }
 
         .iframe-wrapper {
@@ -124,175 +122,289 @@
             background: var(--card-bg);
         }
 
-        .quick-links-list {
-            list-style: none;
-            padding: 0;
+        /* Quick Links Icons Grid System */
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
             margin: 0;
+            padding: 0;
         }
 
-        .quick-links-list li {
-            margin-bottom: 12px;
-        }
-
-        .quick-links-list a {
-            display: block;
-            padding: 12px 16px;
+        .quick-link-box {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            color: var(--accent-color);
+            border-radius: 10px;
+            padding: 20px 10px;
+            text-align: center;
             text-decoration: none;
+            color: var(--secondary-color);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             transition: all 0.2s ease;
         }
 
-        .quick-links-list a:hover {
+        .quick-link-box:hover {
             background: #eff6ff;
             border-color: #bfdbfe;
-            transform: translateX(4px);
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .quick-link-box svg {
+            width: 24px;
+            height: 24px;
+            color: #64748b;
+            transition: color 0.2s;
+        }
+
+        .quick-link-box:hover svg {
+            color: var(--accent-color);
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .calc-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .calc-item h4 {
+            margin: 0 0 10px 0;
+            color: #1e3a8a;
+            font-size: 0.95rem;
+        }
+
+        .calc-inputs {
+            display: flex;
+            gap: 8px;
+        }
+
+        .calc-inputs input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.9rem;
         }
 
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
-            margin-top: 40px;
-        }
-
-        @media (min-width: 900px) {
-            .container {
-                grid-template-columns: 2fr 3fr; 
-            }
+            border-top: 1px solid #e2e8f0;
+            margin-top: 60px;
+            background: #ffffff;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Banner Block Top Profile Layout -->
     <div class="header-banner">
-        <div class="badge">Student Information Portal</div>
+        <div class="badge">Student Information Dashboard</div>
         <h1>AIS 8 Notice Board & Schedule</h1>
         <p>Department of Accounting & Information Systems | Bangladesh University of Professionals</p>
-        
-        <div class="countdown-container">
-            <iframe src="https://www.tickcounter.com/widget/countdown/123456" style="width:100%; height:80px; border:none;" scrollbar="no"></iframe>
-        </div>
     </div>
 
+    <!-- Main Two-Column Layout Grid Row -->
     <div class="container">
 
+        <!-- ================= LEFT COLUMN SIDE PANELS ================= -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
+            <!-- Official Document Notices Card -->
             <div class="card">
                 <div class="card-header">
                     <h2>📌 Official Notices</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8wktWRDZFpqmdF/pub?embedded=true" style="height: 600px;"></iframe>
+                        <iframe src="https://docs.google.com/document/d/e/2PACX-1vRYvhjtGA_d1ab6WQLW0BcVp10RFNkj3Xh5YEOmhgAulqtnhHi_yFewP9r6uE8kS8wktWRDZFpqmdF/pub?embedded=true" style="height: 400px;"></iframe>
                     </div>
                 </div>
             </div>
 
+            <!-- Visual Countdown Counter Widget Card -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>⏳ Countdown</h2>
+                </div>
+                <div class="card-body" style="padding: 15px;">
+                    <div class="iframe-wrapper">
+                        <iframe src="https://www.tickcounter.com/widget/countdown/123456" style="height: 180px; background: transparent;" scrollbar="no"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portal Shortcuts Action Links Menu Card -->
             <div class="card">
                 <div class="card-header">
                     <h2>🔗 Academic Quick Links</h2>
                 </div>
                 <div class="card-body">
-                    <ul class="quick-links-list">
-                        <li><a href="https://ucam.bup.edu.bd/" target="_blank">🌐 BUP UCAM Portal</a></li>
-                        <li><a href="https://bup.edu.bd/" target="_blank">🏫 Official BUP Website</a></li>
-                        <li><a href="#" target="_blank">📚 Course Syllabus PDF</a></li>
-                        <li><a href="#" target="_blank">⏱️ Class Routine & Schedule</a></li>
-                    </ul>
+                    <div class="quick-links-grid">
+                        <a href="https://bup.edu.bd/" target="_blank" class="quick-link-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                            BUP Website
+                        </a>
+                        <a href="https://ucam.bup.edu.bd/" target="_blank" class="quick-link-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            UCAM Portal
+                        </a>
+                        <a href="#" target="_blank" class="quick-link-box">
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                            Library
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
 
+        <!-- ================= RIGHT COLUMN SIDE PANELS ================= -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
+            <!-- Calendar Schedule Embed Grid Card -->
             <div class="card">
                 <div class="card-header">
-                    <h2>📅 Academic Calendar & Exam Dates</h2>
+                    <h2>📅 Calendar</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH" style="height: 350px;"></iframe>
+                        <iframe src="https://calendar.google.com/calendar/embed?src=usefullkor%40gmail.com&ctz=Asia%2FDhaka&wkst=7&bgcolor=%23ffffff&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=1&showCalendars=0&mode=MONTH" style="height: 400px;"></iframe>
                     </div>
                 </div>
             </div>
 
+            <!-- Vault List View Format Storage Modules -->
             <div class="card">
                 <div class="card-header">
                     <h2>📁 PDFs & Course Content</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#grid" style="height: 350px;"></iframe>
+                        <!-- Native List structure view configuration style as requested verbatim -->
+                        <iframe src="https://drive.google.com/embeddedfolderview?id=1rwfT8UjBDiWa3Y_F2HG6KNDaIqF4_1QX#list" style="height: 380px;"></iframe>
                     </div>
                 </div>
             </div>
 
         </div>
 
-    </div> <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%; clear: both;">
-        <div class="card" style="background: #ffffff; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; overflow: hidden; width: 100%;">
+    </div> <!-- Closes Main 2-Column Dashboard Container Layout -->
+
+
+    <!-- ======================================================= -->
+    <!-- INDEPENDENT FULL-WIDTH HORIZONTAL MARKS CALCULATOR ROW  -->
+    <!-- ======================================================= -->
+    <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%;">
+        <div class="card">
             <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
                 <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🎯 Final Marks Calculator</h2>
             </div>
             <div class="card-body" style="padding: 25px;">
                 <p style="margin-top: 0; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">Enter your obtained marks and the total full marks for each assessment component below. The system will automatically convert your scores and calculate what you need on your 100-mark final script.</p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 1 (Weight: 2.5)</h4>
-                        <input type="number" id="ct1_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="ct1_full" placeholder="Full Marks" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                <!-- Expanded multi-column block configuration layout -->
+                <div class="calc-grid">
+                    
+                    <!-- Class Test 1 Input Grid -->
+                    <div class="calc-item">
+                        <h4>Class Test 1 (Weight: 2.5)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="ct1_obt" placeholder="Obtained">
+                            <input type="number" id="ct1_full" placeholder="Full Marks">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 2 (Weight: 2.5)</h4>
-                        <input type="number" id="ct2_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="ct2_full" placeholder="Full Marks" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Class Test 2 Input Grid -->
+                    <div class="calc-item">
+                        <h4>Class Test 2 (Weight: 2.5)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="ct2_obt" placeholder="Obtained">
+                            <input type="number" id="ct2_full" placeholder="Full Marks">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 3 (Weight: 2.5)</h4>
-                        <input type="number" id="ct3_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="ct3_full" placeholder="Full Marks" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Class Test 3 Input Grid -->
+                    <div class="calc-item">
+                        <h4>Class Test 3 (Weight: 2.5)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="ct3_obt" placeholder="Obtained">
+                            <input type="number" id="ct3_full" placeholder="Full Marks">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 4 (Weight: 2.5)</h4>
-                        <input type="number" id="ct4_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="ct4_full" placeholder="Full Marks" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Class Test 4 Input Grid -->
+                    <div class="calc-item">
+                        <h4>Class Test 4 (Weight: 2.5)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="ct4_obt" placeholder="Obtained">
+                            <input type="number" id="ct4_full" placeholder="Full Marks">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Assignment & CW (Weight: 10)</h4>
-                        <input type="number" id="asg_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="asg_full" value="10" placeholder="Full" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Assignment & Classwork Inputs -->
+                    <div class="calc-item">
+                        <h4>Assignment & CW (Weight: 10)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="asg_obt" placeholder="Obtained">
+                            <input type="number" id="asg_full" value="10" placeholder="Full">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Presentation & TP (Weight: 10)</h4>
-                        <input type="number" id="pres_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="pres_full" value="10" placeholder="Full" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Presentation & Term Paper Inputs -->
+                    <div class="calc-item">
+                        <h4>Presentation & TP (Weight: 10)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="pres_obt" placeholder="Obtained">
+                            <input type="number" id="pres_full" value="10" placeholder="Full">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Mid Term Exam (Weight: 20)</h4>
-                        <input type="number" id="mid_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="mid_full" value="20" placeholder="Full" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Mid Term Exam Input Card -->
+                    <div class="calc-item">
+                        <h4>Mid Term Exam (Weight: 20)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="mid_obt" placeholder="Obtained">
+                            <input type="number" id="mid_full" value="20" placeholder="Full">
+                        </div>
                     </div>
-                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
-                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Attendance (Weight: 10)</h4>
-                        <input type="number" id="att_obt" placeholder="Obtained" style="width: 44%; padding: 8px; margin-right: 4%; border: 1px solid #cbd5e1; border-radius: 4px;">
-                        <input type="number" id="att_full" value="10" placeholder="Full" style="width: 44%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+
+                    <!-- Class Attendance Performance Card -->
+                    <div class="calc-item">
+                        <h4>Attendance (Weight: 10)</h4>
+                        <div class="calc-inputs">
+                            <input type="number" id="att_obt" placeholder="Obtained">
+                            <input type="number" id="att_full" value="10" placeholder="Full">
+                        </div>
                     </div>
+
                 </div>
 
+                <!-- Dropdown Selection Control Area -->
                 <div style="margin-top: 25px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; background: #f1f5f9; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
                     <div style="flex: 1; min-width: 250px;">
                         <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b; font-size: 0.9rem;">Select Desired Target GPA:</label>
-                        <select id="gradeTarget" style="width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; font-family: inherit;">
+                        <select id="gradeTarget" style="width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; font-family: inherit; font-size: 0.95rem; font-weight: 500; color: #1e293b;">
                             <option value="80">4.00 (80% Overall Marks)</option>
                             <option value="75">3.75 (75% Overall Marks)</option>
                             <option value="70">3.50 (70% Overall Marks)</option>
@@ -300,33 +412,51 @@
                             <option value="60">3.00 (60% Overall Marks)</option>
                         </select>
                     </div>
-                    <button onclick="calculateBUPGrade()" style="padding: 12px 28px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-family: inherit;">Calculate Final Target</button>
+                    <button onclick="calculateBUPGrade()" style="padding: 12px 28px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 0.95rem; cursor: pointer; font-family: inherit; transition: background 0.2s;">Calculate Final Target</button>
                 </div>
 
+                <!-- Dynamic Output Result Card Feedback Box -->
                 <div id="bupCalcResult" style="display: none; margin-top: 25px; padding: 25px; border-radius: 12px; text-align: center; border: 1px solid transparent;">
                     <p id="bupSummaryText" style="margin: 0 0 10px 0; font-size: 1rem; color: #475569; font-weight: 500;"></p>
                     <h3 id="bupResultTitle" style="margin: 0 0 8px 0; font-size: 1.25rem;"></h3>
                     <p id="bupResultScore" style="margin: 0; font-size: 1.85rem; font-weight: 800;"></p>
                 </div>
+
             </div>
         </div>
     </div>
 
+    <!-- Website Standard Footer Layout -->
     <footer>
         &copy; 2026 AIS 8 Portal. Maintained by RATUL SIKDER.
     </footer>
 
+    <!-- Core Interactive Analytical Grade Engine Scripts -->
     <script>
         function getScaledComponent(obtId, fullId, targetWeight) {
             var obtVal = parseFloat(document.getElementById(obtId).value);
             var fullVal = parseFloat(document.getElementById(fullId).value);
-            if (isNaN(obtVal) || isNaN(fullVal) || fullVal <= 0) return 0;
+            
+            if (isNaN(obtVal)) return 0;
+            if (isNaN(fullVal) || fullVal <= 0) return 0;
+            
             return (obtVal / fullVal) * targetWeight;
         }
 
         function calculateBUPGrade() {
-            var totalInternalObtained = getScaledComponent('ct1_obt', 'ct1_full', 2.5) + getScaledComponent('ct2_obt', 'ct2_full', 2.5) + getScaledComponent('ct3_obt', 'ct3_full', 2.5) + getScaledComponent('ct4_obt', 'ct4_full', 2.5) + getScaledComponent('asg_obt', 'asg_full', 10) + getScaledComponent('pres_obt', 'pres_full', 10) + getScaledComponent('mid_obt', 'mid_full', 20) + getScaledComponent('att_obt', 'att_full', 10);
+            var ct1 = getScaledComponent('ct1_obt', 'ct1_full', 2.5);
+            var ct2 = getScaledComponent('ct2_obt', 'ct2_full', 2.5);
+            var ct3 = getScaledComponent('ct3_obt', 'ct3_full', 2.5);
+            var ct4 = getScaledComponent('ct4_obt', 'ct4_full', 2.5);
+            
+            var assignment = getScaledComponent('asg_obt', 'asg_full', 10);
+            var presentation = getScaledComponent('pres_obt', 'pres_full', 10);
+            var midterm = getScaledComponent('mid_obt', 'mid_full', 20);
+            var attendance = getScaledComponent('att_obt', 'att_full', 10);
+
+            var totalInternalObtained = ct1 + ct2 + ct3 + ct4 + assignment + presentation + midterm + attendance;
             var targetGoal = parseFloat(document.getElementById('gradeTarget').value);
+            
             var displayBox = document.getElementById('bupCalcResult');
             var summaryText = document.getElementById('bupSummaryText');
             var resultTitle = document.getElementById('bupResultTitle');
@@ -334,22 +464,33 @@
 
             displayBox.style.display = "block";
             summaryText.innerText = "Your calculated internal standing is " + totalInternalObtained.toFixed(2) + " out of 60.";
+
             var neededFromForty = targetGoal - totalInternalObtained;
 
             if (neededFromForty <= 0) {
-                displayBox.style.backgroundColor = "#dcfce7"; displayBox.style.borderColor = "#bbf7d0";
-                resultTitle.style.color = "#166534"; resultScore.style.color = "#15803d";
-                resultTitle.innerText = "Target Already Locked!"; resultScore.innerText = "0 Marks Needed on Final Paper";
+                displayBox.style.backgroundColor = "#dcfce7";
+                displayBox.style.borderColor = "#bbf7d0";
+                resultTitle.style.color = "#166534";
+                resultScore.style.color = "#15803d";
+                resultTitle.innerText = "Target Already Locked!";
+                resultScore.innerText = "0 Marks Needed on the Final Paper";
             } else {
                 var requiredOnRawPaper = (neededFromForty / 40) * 100;
+
                 if (requiredOnRawPaper > 100) {
-                    displayBox.style.backgroundColor = "#fee2e2"; displayBox.style.borderColor = "#fca5a5";
-                    resultTitle.style.color = "#991b1b"; resultScore.style.color = "#dc2626";
-                    resultTitle.innerText = "Grade Goal Mathematically Impossible"; resultScore.innerText = "Requires " + Math.ceil(requiredOnRawPaper) + " / 100";
+                    displayBox.style.backgroundColor = "#fee2e2";
+                    displayBox.style.borderColor = "#fca5a5";
+                    resultTitle.style.color = "#991b1b";
+                    resultScore.style.color = "#dc2626";
+                    resultTitle.innerText = "Grade Goal Mathematically Impossible";
+                    resultScore.innerText = "Requires " + Math.ceil(requiredOnRawPaper) + " out of 100";
                 } else {
-                    displayBox.style.backgroundColor = "#eff6ff"; displayBox.style.borderColor = "#bfdbfe";
-                    resultTitle.style.color = "#1e40af"; resultScore.style.color = "#2563eb";
-                    resultTitle.innerText = "Required Score on the 100-Mark Final Exam Paper:"; resultScore.innerText = Math.ceil(requiredOnRawPaper) + " / 100";
+                    displayBox.style.backgroundColor = "#eff6ff";
+                    displayBox.style.borderColor = "#bfdbfe";
+                    resultTitle.style.color = "#1e40af";
+                    resultScore.style.color = "#2563eb";
+                    resultTitle.innerText = "Required Score on the 100-Mark Final Exam Paper:";
+                    resultScore.innerText = Math.ceil(requiredOnRawPaper) + " / 100";
                 }
             }
         }
