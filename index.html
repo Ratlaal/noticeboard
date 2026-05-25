@@ -242,14 +242,16 @@
                 </div>
             </div>
 
-            <!-- Visual Countdown Counter Widget Card -->
+            <!-- Professional Masked Countdown Card Layout -->
             <div class="card">
                 <div class="card-header">
                     <h2>⏳ Countdown</h2>
                 </div>
-                <div class="card-body" style="padding: 15px;">
-                    <div class="iframe-wrapper">
-                  <iframe src="https://www.tickcounter.com/countdown/10411316/final-week?updates=0&share=0&bg=ffffff" style="width: 100%; height: 135px; border: none; background: #ffffff;" scrollbar="no"></iframe>
+                <div class="card-body" style="padding: 15px; background: #ffffff;">
+                    <!-- The window wrapper blocks everything outside its tight 85px height -->
+                    <div class="iframe-wrapper" style="width: 100%; height: 85px; overflow: hidden; position: relative;">
+                        <!-- The iframe is styled taller (135px) to push the share bar out of view -->
+                        <iframe src="https://www.tickcounter.com/countdown/10411316/final-week" style="width: 100%; height: 135px; border: none; background: #ffffff; position: absolute; top: 0; left: 0;" scrollbar="no"></iframe>
                     </div>
                 </div>
             </div>
