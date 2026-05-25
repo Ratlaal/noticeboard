@@ -231,6 +231,169 @@
                 </div>
             </div>
 
+            <!-- Advanced BUP AIS 8 Grade Calculator -->
+        <div class="card" style="grid-column: 1 / -1; margin-top: 30px;">
+            <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
+                <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🎯 AIS 8 Interactive Final Target Calculator</h2>
+            </div>
+            <div class="card-body" style="padding: 25px;">
+                <p style="margin-top: 0; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">Enter your obtained marks and the total full marks for each assessment component below. The system will automatically convert your scores and calculate what you need on your 100-mark final script.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0;">
+                    
+                    <!-- Class Test 1 -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 1 (Weight: 2.5)</h4>
+                        <input type="number" id="ct1_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="ct1_full" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Class Test 2 -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 2 (Weight: 2.5)</h4>
+                        <input type="number" id="ct2_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="ct2_full" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Class Test 3 -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 3 (Weight: 2.5)</h4>
+                        <input type="number" id="ct3_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="ct3_full" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Class Test 4 -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Class Test 4 (Weight: 2.5)</h4>
+                        <input type="number" id="ct4_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="ct4_full" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Assignment & Classwork -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Assignment & CW (Weight: 10)</h4>
+                        <input type="number" id="asg_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="asg_full" value="10" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Presentation & Term Paper -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Presentation & TP (Weight: 10)</h4>
+                        <input type="number" id="pres_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="pres_full" value="10" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Mid Term -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Mid Term Exam (Weight: 20)</h4>
+                        <input type="number" id="mid_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="mid_full" value="20" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                    <!-- Attendance -->
+                    <div style="background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                        <h4 style="margin: 0 0 10px 0; color: #1e3a8a; font-size: 0.95rem;">Attendance (Weight: 10)</h4>
+                        <input type="number" id="att_obt" placeholder="Obtained" style="width: 46%; padding: 8px; margin-right: 5%; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <input type="number" id="att_full" value="10" placeholder="Full Marks" style="width: 46%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                    </div>
+
+                </div>
+
+                <!-- Target Selector and Trigger -->
+                <div style="margin-top: 25px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; background: #f1f5f9; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <div style="flex: 1; min-width: 250px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b; font-size: 0.9rem;">Select Desired Target Grade:</label>
+                        <select id="gradeTarget" style="width: 100%; padding: 11px; border: 1px solid #cbd5e1; border-radius: 6px; background: white; font-family: inherit;">
+                            <option value="80">A+ Grade (80% Overall Marks)</option>
+                            <option value="75">A Grade (75% Overall Marks)</option>
+                            <option value="70">A- Grade (70% Overall Marks)</option>
+                            <option value="65">B+ Grade (65% Overall Marks)</option>
+                            <option value="60">B Grade (60% Overall Marks)</option>
+                        </select>
+                    </div>
+                    <button onclick="calculateBUPGrade()" style="padding: 12px 28px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s;">Calculate Final Target</button>
+                </div>
+
+                <!-- Display Box -->
+                <div id="bupCalcResult" style="display: none; margin-top: 25px; padding: 25px; border-radius: 12px; text-align: center; border: 1px solid transparent;">
+                    <p id="bupSummaryText" style="margin: 0 0 10px 0; font-size: 1rem; color: #475569; font-weight: 500;"></p>
+                    <h3 id="bupResultTitle" style="margin: 0 0 8px 0; font-size: 1.25rem;"></h3>
+                    <p id="bupResultScore" style="margin: 0; font-size: 1.85rem; font-weight: 800;"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Logic Script -->
+        <script>
+            function getScaledComponent(obtId, fullId, targetWeight) {
+                var obtVal = parseFloat(document.getElementById(obtId).value);
+                var fullVal = parseFloat(document.getElementById(fullId).value);
+                
+                // If the user left it blank, treat as 0
+                if (isNaN(obtVal)) return 0;
+                // Avoid division by zero if full marks field is corrupted or empty
+                if (isNaN(fullVal) || fullVal <= 0) return 0;
+                
+                return (obtVal / fullVal) * targetWeight;
+            }
+
+            function calculateBUPGrade() {
+                // Calculate individual components scaled automatically
+                var ct1 = getScaledComponent('ct1_obt', 'ct1_full', 2.5);
+                var ct2 = getScaledComponent('ct2_obt', 'ct2_full', 2.5);
+                var ct3 = getScaledComponent('ct3_obt', 'ct3_full', 2.5);
+                var ct4 = getScaledComponent('ct4_obt', 'ct4_full', 2.5);
+                
+                var assignment = getScaledComponent('asg_obt', 'asg_full', 10);
+                var presentation = getScaledComponent('pres_obt', 'pres_full', 10);
+                var midterm = getScaledComponent('mid_obt', 'mid_full', 20);
+                var attendance = getScaledComponent('att_obt', 'att_full', 10);
+
+                // Combine into aggregate out of 60
+                var totalInternalObtained = ct1 + ct2 + ct3 + ct4 + assignment + presentation + midterm + attendance;
+                var targetGoal = parseFloat(document.getElementById('gradeTarget').value);
+                
+                var displayBox = document.getElementById('bupCalcResult');
+                var summaryText = document.getElementById('bupSummaryText');
+                var resultTitle = document.getElementById('bupResultTitle');
+                var resultScore = document.getElementById('bupResultScore');
+
+                // Clear formatting states
+                displayBox.style.display = "block";
+                summaryText.innerText = "Your calculated internal standing is " + totalInternalObtained.toFixed(2) + " out of 60.";
+
+                var neededFromForty = targetGoal - totalInternalObtained;
+
+                if (neededFromForty <= 0) {
+                    displayBox.style.backgroundColor = "#dcfce7";
+                    displayBox.style.borderColor = "#bbf7d0";
+                    resultTitle.style.color = "#166534";
+                    resultScore.style.color = "#15803d";
+                    resultTitle.innerText = "Target Already Locked!";
+                    resultScore.innerText = "0 Marks Needed on the Final Paper";
+                } else {
+                    // Convert score required in 40 weight back to 100 mark script scale
+                    var requiredOnRawPaper = (neededFromForty / 40) * 100;
+
+                    if (requiredOnRawPaper > 100) {
+                        displayBox.style.backgroundColor = "#fee2e2";
+                        displayBox.style.borderColor = "#fca5a5";
+                        resultTitle.style.color = "#991b1b";
+                        resultScore.style.color = "#dc2626";
+                        resultTitle.innerText = "Grade Goal Mathematically Impossible";
+                        resultScore.innerText = "Requires " + Math.ceil(requiredOnRawPaper) + " out of 100";
+                    } else {
+                        displayBox.style.backgroundColor = "#eff6ff";
+                        displayBox.style.borderColor = "#bfdbfe";
+                        resultTitle.style.color = "#1e40af";
+                        resultScore.style.color = "#2563eb";
+                        resultTitle.innerText = "Required Score on the 100-Mark Final Exam Paper:";
+                        resultScore.innerText = Math.ceil(requiredOnRawPaper) + " / 100";
+                    }
+                }
+            }
+        </script>
         </div> <!-- End of Right Column -->
 
     </div> <!-- End of Layout Container -->
