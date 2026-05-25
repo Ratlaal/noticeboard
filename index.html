@@ -153,6 +153,7 @@
     <div class="container">
 
         <!-- Section 1: Notice Board -->
+        <div style="display: flex; flex-direction: column; gap: 30px;">
         <div class="card">
             <div class="card-header">
                 <h2>📌 Official Notices</h2>
@@ -164,6 +165,47 @@
             </div>
         </div>
 
+            <!-- New Left-Side Sub-Stack for Countdown & Links -->
+        <div style="display: flex; flex-direction: column; gap: 30px;">
+            
+            <!-- 1. Countdown Timer Card -->
+            <div class="card">
+                <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
+                    <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">⏳ Finals Countdown</h2>
+                </div>
+                <div class="card-body" style="padding: 25px;">
+                    <div class="iframe-wrapper" style="width: 100%; overflow: hidden; border-radius: 8px;">
+                        <iframe src="https://www.tickcounter.com/widget/countdown/123456" style="border: none; width: 100%; height: 80px; background: #ffffff;" scrollbar="no"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Academic Quick Links Card -->
+            <div class="card">
+                <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
+                    <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🔗 Academic Quick Links</h2>
+                </div>
+                <div class="card-body" style="padding: 25px;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px;">
+                        <a href="https://bup.edu.bd" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
+                            <span style="font-size: 1.5rem; margin-bottom: 8px;">🏛️</span>
+                            <span>BUP Website</span>
+                        </a>
+                        <a href="https://ucam.bup.edu.bd" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
+                            <span style="font-size: 1.5rem; margin-bottom: 8px;">💻</span>
+                            <span>UCAM Portal</span>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1rwfT8UJbDiWa3Y_F2HG6KNDaIqF4_lQX" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 15px 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.2s ease;">
+                            <span style="font-size: 1.5rem; margin-bottom: 8px;">☁️</span>
+                            <span>Open Drive</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- Closes the Left-Side Sub-Stack -->
+
+    </div> <!-- Closes the main Left Column Wrapper we added in Step 1 -->
        <!-- Section 2: Calendar & Resource Vault Column Group -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
