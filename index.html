@@ -10,10 +10,10 @@
     
     <style>
         :root {
-            --primary-color: #0f172a; 
-            --secondary-color: #1e293b;
-            --accent-color: #3b82f6; 
-            --bg-color: #f1f5f9;
+            --primary-color: #1e3a8a;    /* Premium Royal Blue */
+            --secondary-color: #0f172a;  /* Deep Slate for Headers */
+            --accent-color: #3b82f6;     /* Vibrant Electric Blue Accent */
+            --bg-color: #f8fafc;         /* Ultra-clean Slate White Background */
             --card-bg: #ffffff;
             --text-main: #334155;
             --text-muted: #64748b;
@@ -29,23 +29,23 @@
 
         .header-banner {
             background-color: var(--primary-color);
-            background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-image: linear-gradient(135deg, #1e3a8a 0%, #0284c7 100%); /* Vibrant Deep Blue to Cyan Gradient */
             color: white;
             padding: 60px 20px 60px 20px; 
             text-align: center;
-            border-bottom: 4px solid var(--accent-color);
+            border-bottom: 4px solid #06b6d4;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 16px;
             letter-spacing: 1.5px;
-            color: #93c5fd;
+            color: #e0f2fe;
             text-transform: uppercase;
         }
 
@@ -55,12 +55,12 @@
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .header-banner p {
             margin: 12px 0 0 0;
-            color: #cbd5e1;
+            color: #e0f2fe;
             font-size: 1.1rem;
             font-weight: 400;
         }
@@ -85,9 +85,14 @@
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
             overflow: hidden;
             border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
         }
 
         .card-header {
@@ -148,22 +153,36 @@
             transition: all 0.2s ease;
         }
 
-        .quick-link-box:hover {
+        /* Individual Smooth Branding Hovers for Quick Links */
+        .quick-link-box:nth-child(1):hover {
             background: #eff6ff;
             border-color: #bfdbfe;
-            color: var(--accent-color);
+            color: #2563eb;
             transform: translateY(-2px);
         }
+        .quick-link-box:nth-child(1):hover svg { color: #2563eb; }
+
+        .quick-link-box:nth-child(2):hover {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+            color: #16a34a;
+            transform: translateY(-2px);
+        }
+        .quick-link-box:nth-child(2):hover svg { color: #16a34a; }
+
+        .quick-link-box:nth-child(3):hover {
+            background: #fff7ed;
+            border-color: #ffedd5;
+            color: #ea580c;
+            transform: translateY(-2px);
+        }
+        .quick-link-box:nth-child(3):hover svg { color: #ea580c; }
 
         .quick-link-box svg {
             width: 24px;
             height: 24px;
             color: #64748b;
             transition: color 0.2s;
-        }
-
-        .quick-link-box:hover svg {
-            color: var(--accent-color);
         }
 
         .calc-grid {
@@ -231,7 +250,7 @@
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
             <!-- Official Document Notices Card -->
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #3b82f6;"> <!-- Info Blue Top Border -->
                 <div class="card-header">
                     <h2>📌 Notices</h2>
                 </div>
@@ -243,14 +262,12 @@
             </div>
 
             <!-- Professional Masked Countdown Card Layout -->
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #ef4444;"> <!-- Urgent Red Top Border -->
                 <div class="card-header">
                     <h2>⏳ Countdown</h2>
                 </div>
                 <div class="card-body" style="padding: 15px; background: #ffffff;">
-                    <!-- The window wrapper blocks everything outside its tight 85px height -->
                     <div class="iframe-wrapper" style="width: 100%; height: 85px; overflow: hidden; position: relative;">
-                        <!-- The iframe is styled taller (135px) to push the share bar out of view -->
                         <iframe src="https://www.tickcounter.com/countdown/10737061/tax" style="width: 100%; height: 135px; border: none; background: #ffffff; position: absolute; top: 0; left: 0;" scrollbar="no"></iframe>
                     </div>
                 </div>
@@ -285,7 +302,7 @@
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
             <!-- Calendar Schedule Embed Grid Card -->
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #8b5cf6;"> <!-- Calendar Purple Top Border -->
                 <div class="card-header">
                     <h2>📅 Your Next Matha Betha </h2>
                 </div>
@@ -297,13 +314,12 @@
             </div>
 
             <!-- Vault List View Format Storage Modules -->
-            <div class="card">
+            <div class="card" style="border-top: 4px solid #10b981;"> <!-- Drive Green Top Border -->
                 <div class="card-header">
                     <h2>📁 PDFs & Course Content</h2>
                 </div>
                 <div class="card-body">
                     <div class="iframe-wrapper">
-                        <!-- Native List structure view configuration style as requested verbatim -->
                         <iframe src="https://drive.google.com/embeddedfolderview?id=15EhSM0RGQK4Q85KMpsWNtCLBBVCGXhpc#list" style="height: 380px;"></iframe>
                     </div>
                 </div>
@@ -318,14 +334,13 @@
     <!-- INDEPENDENT FULL-WIDTH HORIZONTAL MARKS CALCULATOR ROW  -->
     <!-- ======================================================= -->
     <div style="max-width: 1250px; margin: 40px auto; padding: 0 20px; box-sizing: border-box; width: 100%;">
-        <div class="card">
+        <div class="card" style="border-top: 4px solid #f59e0b;"> <!-- Calculator Orange Top Border -->
             <div class="card-header" style="background: #f8fafc; padding: 20px 25px; border-bottom: 1px solid #e2e8f0;">
                 <h2 style="margin: 0; color: #1e293b; font-size: 1.3rem; font-weight: 700;">🎯 Bhai Pass Korbo?</h2>
             </div>
             <div class="card-body" style="padding: 25px;">
                 <p style="margin-top: 0; color: #64748b; font-size: 0.95rem; margin-bottom: 25px;">Find out how cooked you are.</p>
                 
-                <!-- Expanded multi-column block configuration layout -->
                 <div class="calc-grid">
                     
                     <!-- Class Test 1 Input Grid -->
@@ -451,12 +466,16 @@
             var ct3 = getScaledComponent('ct3_obt', 'ct3_full', 2.5);
             var ct4 = getScaledComponent('ct4_obt', 'ct4_full', 2.5);
             
+            var ctScores = [ct1, ct2, ct3, ct4];
+            ctScores.sort(function(a, b) { return a - b; });
+            var bestThreeCT = ctScores[1] + ctScores[2] + ctScores[3];
+
             var assignment = getScaledComponent('asg_obt', 'asg_full', 10);
             var presentation = getScaledComponent('pres_obt', 'pres_full', 10);
             var midterm = getScaledComponent('mid_obt', 'mid_full', 20);
             var attendance = getScaledComponent('att_obt', 'att_full', 10);
 
-            var totalInternalObtained = ct1 + ct2 + ct3 + ct4 + assignment + presentation + midterm + attendance;
+            var totalInternalObtained = bestThreeCT + assignment + presentation + midterm + attendance;
             var targetGoal = parseFloat(document.getElementById('gradeTarget').value);
             
             var displayBox = document.getElementById('bupCalcResult');
@@ -465,7 +484,7 @@
             var resultScore = document.getElementById('bupResultScore');
 
             displayBox.style.display = "block";
-            summaryText.innerText = "Your calculated internal standing is " + totalInternalObtained.toFixed(2) + " out of 60.";
+            summaryText.innerText = "Your calculated internal standing (Best 3 CTs) is " + totalInternalObtained.toFixed(2) + " out of 60.";
 
             var neededFromForty = targetGoal - totalInternalObtained;
 
