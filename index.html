@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-            :root {
+        :root {
             --primary-color: #0f172a; 
             --secondary-color: #1e293b;
             --accent-color: #3b82f6; 
@@ -27,7 +28,7 @@
             color: var(--text-main);
         }
 
-                .header-banner {
+        .header-banner {
             background-color: var(--primary-color);
             background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -35,7 +36,6 @@
             text-align: center;
             border-bottom: 4px solid var(--accent-color);
         }
-
 
         .badge {
             display: inline-block;
@@ -223,6 +223,54 @@
             font-size: 0.9rem;
         }
 
+        /* Smooth Expanding Accordion Layout Styles */
+        .accordion-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+        .accordion-header {
+            width: 100%;
+            background: #ffffff;
+            border: none;
+            padding: 16px 22px;
+            text-align: left;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .accordion-header:hover {
+            background: #f8fafc;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f8fafc;
+        }
+        .accordion-content iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+        }
+        .accordion-icon {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            color: var(--text-muted);
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+            color: var(--accent-color);
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -259,6 +307,60 @@
                     <div class="iframe-wrapper">
                         <iframe src="https://docs.google.com/document/d/e/2PACX-1vTwLm8mAjnEXkEtI301CBR9ggMQLvM-x-ypo1xLL5GJzmFto5o3WRFYDGNNGKBP9JUx8AtAiQFElS3P/pub?embedded=true" style="height: 500px;"></iframe>
                     </div>
+                </div>
+            </div>
+
+            <!-- New Multi-Document Accordion Notice Card -->
+            <div class="card" style="border-top: 4px solid #3b82f6;"> 
+                <div class="card-header">
+                    <h2>📁 Notice Archive & Sub-folders</h2>
+                </div>
+                <div class="card-body" style="padding: 0;">
+                    
+                    <!-- Notice 1 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>📄 Notice Document 1</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <iframe src="PLACE_YOUR_GOOGLE_DOC_LINK_1_HERE"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Notice 2 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>📄 Notice Document 2</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <iframe src="PLACE_YOUR_GOOGLE_DOC_LINK_2_HERE"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Notice 3 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>📄 Notice Document 3</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <iframe src="PLACE_YOUR_GOOGLE_DOC_LINK_3_HERE"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Notice 4 -->
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>📄 Notice Document 4</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <iframe src="PLACE_YOUR_GOOGLE_DOC_LINK_4_HERE"></iframe>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -514,6 +616,20 @@
                     resultTitle.innerText = "Required Score on the 100-Mark Final Exam Paper:";
                     resultScore.innerText = Math.ceil(requiredOnRawPaper) + " / 100";
                 }
+            }
+        }
+
+        // Smooth expanding and closing Accordion animation logic
+        function toggleAccordion(element) {
+            var item = element.parentElement;
+            var content = element.nextElementSibling;
+            
+            item.classList.toggle('active');
+            
+            if (item.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = "0px";
             }
         }
     </script>
