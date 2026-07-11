@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIS 8 Notice Board & Schedule</title>
     
-    <!-- Premium Workspace Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -13,7 +12,7 @@
             --primary-color: #0f172a; 
             --secondary-color: #1e293b;
             --accent-color: #3b82f6; 
-            --bg-color: #f1f5f9;
+            --bg-color: #f8fafc; /* Upgraded to a modern, bright workspace tint */
             --card-bg: #ffffff;
             --text-main: #334155;
             --text-muted: #64748b;
@@ -85,14 +84,16 @@
         .card {
             background: var(--card-bg);
             border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+            box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
             overflow: hidden;
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Premium Shadow Lift Effect on Hover */
         .card:hover {
-            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.06), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
         }
 
         .card-header {
@@ -153,7 +154,7 @@
             transition: all 0.2s ease;
         }
 
-        /* Individual Smooth Branding Hovers for Quick Links */
+        /* Individual Smooth Hovers for Branding */
         .quick-link-box:nth-child(1):hover {
             background: #eff6ff;
             border-color: #bfdbfe;
@@ -185,7 +186,7 @@
             transition: color 0.2s;
         }
 
-        /* Optimized Grid for Right Sidebar Calculator */
+        /* Responsive Sidebar Calculator Grid Layout */
         .calc-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -277,6 +278,28 @@
             color: var(--accent-color);
         }
 
+        /* Resource Vault Links Interactive Layout Styling */
+        .resource-vault-link {
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 14px 18px; 
+            background: #f8fafc; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: #1e293b; 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .resource-vault-link:hover {
+            background: #eff6ff; 
+            border-color: #bfdbfe; 
+            color: #2563eb;
+            transform: translateX(3px);
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -291,22 +314,17 @@
 </head>
 <body>
 
-    <!-- Header Banner Block Top Profile Layout -->
     <div class="header-banner">
         <div class="badge">Student Information Dashboard</div>
         <h1>AIS 8 Notice Board & Schedule</h1>
         <p>Department of Accounting & Information Systems | Bangladesh University of Professionals</p>
     </div>
 
-    <!-- Main Two-Column Layout Grid Row -->
     <div class="container">
 
-        <!-- ================= LEFT COLUMN SIDE PANELS ================= -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
-            <!-- Official Document Notices Card -->
-            <div class="card" style="border-top: 4px solid #3b82f6;"> <!-- Info Blue Top Border -->
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #3b82f6;"> <div class="card-header">
                     <h2>📌 Notices</h2>
                 </div>
                 <div class="card-body">
@@ -316,14 +334,11 @@
                 </div>
             </div>
 
-            <!-- New Multi-Document Accordion Notice Card -->
-            <div class="card" style="border-top: 4px solid #3b82f6;"> 
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #3b82f6;"> <div class="card-header">
                     <h2>📁 Notice Archive & Sub-folders</h2>
                 </div>
                 <div class="card-body" style="padding: 0;">
                     
-                    <!-- Notice 1 -->
                     <div class="accordion-item">
                         <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>📄 Notice Document 1</span>
@@ -334,7 +349,6 @@
                         </div>
                     </div>
 
-                    <!-- Notice 2 -->
                     <div class="accordion-item">
                         <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>📄 Notice Document 2</span>
@@ -345,7 +359,6 @@
                         </div>
                     </div>
 
-                    <!-- Notice 3 -->
                     <div class="accordion-item">
                         <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>📄 Notice Document 3</span>
@@ -356,7 +369,6 @@
                         </div>
                     </div>
 
-                    <!-- Notice 4 -->
                     <div class="accordion-item">
                         <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>📄 Notice Document 4</span>
@@ -367,8 +379,7 @@
                         </div>
                     </div>
 
-                     <!-- Notice 5 -->
-                    <div class="accordion-item">
+                     <div class="accordion-item">
                         <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>📄 Notice Document 5</span>
                             <span class="accordion-icon">▼</span>
@@ -381,9 +392,7 @@
                 </div>
             </div>
 
-            <!-- Professional Masked Countdown Card Layout -->
-            <div class="card" style="border-top: 4px solid #ef4444;"> <!-- Urgent Red Top Border -->
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #ef4444;"> <div class="card-header">
                     <h2>⏳ Countdown</h2>
                 </div>
                 <div class="card-body" style="padding: 15px; background: #ffffff;">
@@ -393,9 +402,7 @@
                 </div>
             </div>
 
-            <!-- Portal Shortcuts Action Links Menu Card -->
-            <div class="card">
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #64748b;"> <div class="card-header">
                     <h2>🔗 Academic Quick Links</h2>
                 </div>
                 <div class="card-body">
@@ -416,36 +423,30 @@
                 </div>
             </div>
 
-            <!-- Essential Resource Links Panel -->
-            <div class="card" style="border-top: 4px solid #3b82f6;">
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #2563eb;"> <div class="card-header">
                     <h2>🔗 Essential Resource Links</h2>
                 </div>
-                <div class="card-body" style="padding: 15px;">
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="card-body" style="padding: 18px 22px;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
                         
-                        <!-- Link Item 1 -->
-                        <a href="YOUR_ACTUAL_URL_HERE_1" target="_blank" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#bfdbfe'; this.style.color='#2563eb';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0'; this.style.color='#1e293b';">
+                        <a href="YOUR_ACTUAL_URL_HERE_1" target="_blank" class="resource-vault-link">
                             <span style="display: flex; align-items: center; gap: 10px;">📂 Trimester Routine Sheet</span>
-                            <span style="font-size: 0.75rem; color: #64748b;">🔗 Open</span>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">🔗 Open</span>
                         </a>
 
-                        <!-- Link Item 2 -->
-                        <a href="YOUR_ACTUAL_URL_HERE_2" target="_blank" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#bfdbfe'; this.style.color='#2563eb';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0'; this.style.color='#1e293b';">
+                        <a href="YOUR_ACTUAL_URL_HERE_2" target="_blank" class="resource-vault-link">
                             <span style="display: flex; align-items: center; gap: 10px;">📝 Exam Registration Portal</span>
-                            <span style="font-size: 0.75rem; color: #64748b;">🔗 Open</span>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">🔗 Open</span>
                         </a>
 
-                        <!-- Link Item 3 -->
-                        <a href="YOUR_ACTUAL_URL_HERE_3" target="_blank" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#bfdbfe'; this.style.color='#2563eb';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0'; this.style.color='#1e293b';">
+                        <a href="YOUR_ACTUAL_URL_HERE_3" target="_blank" class="resource-vault-link">
                             <span style="display: flex; align-items: center; gap: 10px;">👥 Faculty Contact Directory</span>
-                            <span style="font-size: 0.75rem; color: #64748b;">🔗 Open</span>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">🔗 Open</span>
                         </a>
 
-                        <!-- Link Item 4 -->
-                        <a href="YOUR_ACTUAL_URL_HERE_4" target="_blank" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; text-decoration: none; color: #1e293b; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease;" onmouseover="this.style.background='#eff6ff'; this.style.borderColor='#bfdbfe'; this.style.color='#2563eb';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0'; this.style.color='#1e293b';">
+                        <a href="YOUR_ACTUAL_URL_HERE_4" target="_blank" class="resource-vault-link">
                             <span style="display: flex; align-items: center; gap: 10px;">💬 Official Batch Messenger Group</span>
-                            <span style="font-size: 0.75rem; color: #64748b;">🔗 Open</span>
+                            <span style="font-size: 0.75rem; font-weight: 700; color: #64748b;">🔗 Open</span>
                         </a>
 
                     </div>
@@ -454,12 +455,9 @@
 
         </div>
 
-        <!-- ================= RIGHT COLUMN SIDE PANELS ================= -->
         <div style="display: flex; flex-direction: column; gap: 30px;">
             
-            <!-- Calendar Schedule Embed Grid Card -->
-            <div class="card" style="border-top: 4px solid #8b5cf6;"> <!-- Calendar Purple Top Border -->
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #8b5cf6;"> <div class="card-header">
                     <h2>📅 Your Next Matha Betha </h2>
                 </div>
                 <div class="card-body">
@@ -469,9 +467,7 @@
                 </div>
             </div>
 
-            <!-- Vault List View Format Storage Modules -->
-            <div class="card" style="border-top: 4px solid #10b981;"> <!-- Drive Green Top Border -->
-                <div class="card-header">
+            <div class="card" style="border-top: 4px solid #10b981;"> <div class="card-header">
                     <h2>📁 PDFs & Course Content</h2>
                 </div>
                 <div class="card-body">
@@ -481,17 +477,14 @@
                 </div>
             </div>
 
-            <!-- NESTED MARKS CALCULATOR ROW (Fills Right Column Perfectly) -->
-            <div class="card" style="border-top: 4px solid #f59e0b;"> <!-- Calculator Orange Top Border -->
-                <div class="card-header" style="background: #f8fafc; padding: 18px 22px; border-bottom: 1px solid #e2e8f0;">
-                    <h2 style="margin: 0; color: #1e293b; font-size: 1.2rem; font-weight: 700;">🎯 Bhai Pass Korbo?</h2>
+            <div class="card" style="border-top: 4px solid #f59e0b;"> <div class="card-header">
+                    <h2>🎯 Bhai Pass Korbo?</h2>
                 </div>
                 <div class="card-body" style="padding: 20px;">
                     <p style="margin-top: 0; color: #64748b; font-size: 0.9rem; margin-bottom: 15px;">Find out how cooked you are.</p>
                     
                     <div class="calc-grid">
                         
-                        <!-- Class Test 1 Input -->
                         <div class="calc-item">
                             <h4>Class Test 1 (2.5)</h4>
                             <div class="calc-inputs">
@@ -500,7 +493,6 @@
                             </div>
                         </div>
 
-                        <!-- Class Test 2 Input -->
                         <div class="calc-item">
                             <h4>Class Test 2 (2.5)</h4>
                             <div class="calc-inputs">
@@ -509,7 +501,6 @@
                             </div>
                         </div>
 
-                        <!-- Class Test 3 Input -->
                         <div class="calc-item">
                             <h4>Class Test 3 (2.5)</h4>
                             <div class="calc-inputs">
@@ -518,7 +509,6 @@
                             </div>
                         </div>
 
-                        <!-- Class Test 4 Input -->
                         <div class="calc-item">
                             <h4>Class Test 4 (2.5)</h4>
                             <div class="calc-inputs">
@@ -527,7 +517,6 @@
                             </div>
                         </div>
 
-                        <!-- Assignment & Classwork Inputs -->
                         <div class="calc-item">
                             <h4>Assignment & CW (10)</h4>
                             <div class="calc-inputs">
@@ -536,7 +525,6 @@
                             </div>
                         </div>
 
-                        <!-- Presentation & Term Paper Inputs -->
                         <div class="calc-item">
                             <h4>Presentation & TP (10)</h4>
                             <div class="calc-inputs">
@@ -545,7 +533,6 @@
                             </div>
                         </div>
 
-                        <!-- Mid Term Exam Input Card -->
                         <div class="calc-item">
                             <h4>Mid Term (20)</h4>
                             <div class="calc-inputs">
@@ -554,7 +541,6 @@
                             </div>
                         </div>
 
-                        <!-- Class Attendance Performance Card -->
                         <div class="calc-item">
                             <h4>Attendance (10)</h4>
                             <div class="calc-inputs">
@@ -565,7 +551,6 @@
 
                     </div>
 
-                    <!-- Dropdown Selection Control Area -->
                     <div style="margin-top: 15px; display: flex; flex-direction: column; gap: 12px; background: #f1f5f9; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0;">
                         <div style="width: 100%;">
                             <label style="display: block; font-weight: 600; margin-bottom: 6px; color: #1e293b; font-size: 0.85rem;">Select Target GPA:</label>
@@ -580,7 +565,6 @@
                         <button onclick="calculateBUPGrade()" style="width: 100%; padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; cursor: pointer; font-family: inherit; transition: background 0.2s;">Calculate Final Target</button>
                     </div>
 
-                    <!-- Dynamic Output Result Card Feedback Box -->
                     <div id="bupCalcResult" style="display: none; margin-top: 15px; padding: 15px; border-radius: 12px; text-align: center; border: 1px solid transparent;">
                         <p id="bupSummaryText" style="margin: 0 0 8px 0; font-size: 0.9rem; color: #475569; font-weight: 500;"></p>
                         <h3 id="bupResultTitle" style="margin: 0 0 6px 0; font-size: 1.1rem;"></h3>
@@ -592,14 +576,10 @@
 
         </div>
 
-    </div> <!-- Closes Main 2-Column Dashboard Container Layout -->
-
-    <!-- Website Standard Footer Layout -->
-    <footer>
+    </div> <footer>
         &copy; 2026 AIS 8 Portal. Maintained by RATUL SIKDER.
     </footer>
 
-    <!-- Core Interactive Analytical Grade Engine Scripts -->
     <script>
         function getScaledComponent(obtId, fullId, targetWeight) {
             var obtVal = parseFloat(document.getElementById(obtId).value);
