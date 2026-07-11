@@ -656,17 +656,26 @@
                 }
             }
         }
-
+// Smooth expanding and closing Accordion animation logic with auto-close
         function toggleAccordion(element) {
             var item = element.parentElement;
             var content = element.nextElementSibling;
+            var isAlreadyActive = item.classList.contains('active');
             
-            item.classList.toggle('active');
+            // 1. Find all other accordion items in this card and close them
+            var allItems = item.parentElement.querySelectorAll('.accordion-item');
+            allItems.forEach(function(el) {
+                el.classList.remove('active');
+                var elContent = el.querySelector('.accordion-content');
+                if (elContent) {
+                    elContent.style.maxHeight = "0px";
+                }
+            });
             
-            if (item.classList.contains('active')) {
+            // 2. If the clicked item wasn't already open, expand it smoothly
+            if (!isAlreadyActive) {
+                item.classList.add('active');
                 content.style.maxHeight = content.scrollHeight + "px";
-            } else {
-                content.style.maxHeight = "0px";
             }
         }
     </script>
